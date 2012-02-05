@@ -1,0 +1,32 @@
+<html>
+	<head>
+		<title>Graph API Test</title>
+		<script type="text/javascript" src="canvasgraphing-0.1.js"></script>
+		<script type="text/javascript" src="simplecurves.js"></script>
+	</head>
+	<body>
+		<canvas id="graphCanvas" width="400" height="400">
+			No canvas support. Try updating or using a different browser.
+		</canvas>
+		<script type="text/javascript">
+			var myWindow = WINDOW_STANDARD;	
+
+			myWindow.x_left = -5;
+			myWindow.x_right = 5;
+			myWindow.y_lower = -15;
+
+			SetGraphWindow(myWindow);
+
+			var myTickStyle = new TickStyle(TICK_CENTERED, 10);
+			SetTickStyle(myTickStyle);
+
+			SetCurveStyle( new CurveStyle(.1) );
+
+			var myCurve = GenerateCurve(1, -1, -7, 1, 6);
+
+			ConvertToGraph("graphCanvas");
+
+			DrawCurve(myCurve);
+		</script>
+	</body>
+</html>
